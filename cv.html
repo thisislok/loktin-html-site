@@ -1,119 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lok Tin Cheng - CV</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background: #f2f4f8;
-      color: #222;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lok Tin Cheng - Cloud Engineering Portfolio</title>
+<style>
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: #f4f7f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  main {
+    flex-grow: 1;
+    max-width: 900px;
+    margin: 2rem auto 6rem;
+    padding: 0 1rem;
+  }
+  h1, h2, h3 {
+    color: #1a73e8;
+    margin-bottom: 0.25rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    border-bottom: 2px solid #1a73e8;
+    padding-bottom: 0.25rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    color: #555;
+  }
+  p {
+    margin: 0.5rem 0 1rem 0;
+  }
+  ul {
+    list-style: inside disc;
+    margin: 0.25rem 0 1rem 1.25rem;
+  }
+  /* Section styling */
+  section {
+    margin-bottom: 1.5rem;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  }
+  /* Footer fixed with links */
+  footer {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: #1a73e8;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+  }
+  footer a {
+    color: #ffeb3b;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 600;
+  }
+  footer a:hover,
+  footer a:focus {
+    text-decoration: underline;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    main {
+      margin: 1rem;
     }
-
-    header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
     h1 {
-      font-size: 2em;
-      margin-bottom: 0;
-      color: #0a66c2;
+      font-size: 2rem;
     }
-
-    h2 {
-      font-size: 1.2em;
-      color: #444;
-      margin-top: 40px;
-      border-bottom: 2px solid #0a66c2;
-      padding-bottom: 6px;
+    footer {
+      font-size: 0.8rem;
+      padding: 0.75rem 0;
     }
-
-    p, li {
-      line-height: 1.6;
-    }
-
-    ul {
-      margin-left: 20px;
-    }
-
-    .btn-container {
-      text-align: center;
-      margin: 40px 0;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #0a66c2;
-      color: white;
-      text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 6px;
-      font-weight: 600;
-      box-shadow: 0 4px 8px rgba(10, 102, 194, 0.3);
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-      margin: 10px auto;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background: #004182;
-      box-shadow: 0 6px 14px rgba(0, 65, 130, 0.5);
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
+<main>
   <header>
     <h1>Lok Tin Cheng</h1>
-    <p>Cloud Engineering | Azure | DevOps | Security Fundamentals</p>
-    <p>📍 London, UK | ✉️ loktin@example.com | 🌐 www.linkedin.com/in/loktincheng</p>
+    <p><strong>Location:</strong> London, UK</p>
   </header>
 
-  <div class="btn-container">
-    <a href="index.html" class="btn">← Back to Project Page</a>
-  </div>
+  <section id="personal-statement">
+    <h2>Personal Statement</h2>
+    <p>Motivated professional with a background in business development, now transitioning into tech through hands-on training in automation, scripting, and cloud infrastructure. Completed the Generation UK&I Cloud Engineering Bootcamp, gaining experience deploying scalable infrastructure using Terraform, Docker, Kubernetes, Python, and PowerShell, and earning the Microsoft AZ-900 certification. Actively expanding into cloud security to prepare for future roles—earning certifications including SC-900, Google Cybersecurity, and (ISC)²CC.</p>
+    <p>Bringing strong communication, stakeholder management, and problem-solving skills from client-facing environments, which support effective teamwork and project management in technical settings. Prepared to make an impactful contribution in a cloud engineering or cloud security position, delivering value across technical projects.</p>
+  </section>
 
-  <h2>Profile</h2>
-  <p>Transitioning into tech with a background in business development. Skilled in Azure, GitHub Actions, Terraform, Docker, and scripting. Strong communicator, problem-solver, and team player.</p>
+  <section id="technical-skills">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li><strong>Python, PowerShell & Bash scripting:</strong> Automating cloud tasks, writing utility scripts, and handling file tasks to boost efficiency and reduce manual effort.</li>
+      <li><strong>Terraform, Docker & Kubernetes:</strong> Managing cloud infrastructure and containerized environments to support scalable, consistent, and automated deployments.</li>
+      <li><strong>SQL Development & Querying:</strong> Created and managed relational database schemas, defined tables with primary and foreign keys, and wrote complex join queries to retrieve, filter, and organize data for validation and operational support.</li>
+      <li><strong>Linux System Management:</strong> Administering servers, resolving access and service issues, updating patches and maintaining platforms like WordPress using Bash scripting and SSH.</li>
+      <li><strong>Azure Cloud Management:</strong> Configuring and monitoring Azure services including compute services, Entra ID, Sentinel, and Purview, with hands-on experience resolving incidents in lab environments.</li>
+      <li><strong>AI‑Enhanced Productivity:</strong> Leveraging AI tools to automate documentation, generate code snippets, troubleshoot errors, and enhance productivity and streamline technical workflows.</li>
+    </ul>
+  </section>
 
-  <h2>Skills</h2>
-  <ul>
-    <li>Azure Fundamentals, CI/CD Pipelines, Static Web Apps</li>
-    <li>Terraform, Docker, Bash, Python</li>
-    <li>Networking, Identity, Cloud Security (SC-900, (ISC)² CC)</li>
-  </ul>
+  <section id="professional-training">
+    <h2>Professional Training</h2>
+    <p><strong>Azure Cloud Developer (Training), Generation UK & Ireland, London, 2025</strong></p>
+    <ul>
+      <li>Built and provisioned cloud infrastructure with Terraform and configured and managed containerized environments to support scalable and consistent deployments.</li>
+      <li>Used Python and Bash to navigate servers, perform remote operations over SSH, automate tasks, and deploy software including in WordPress environments.</li>
+      <li>Operated through the Azure Portal to deploy and manage resources, including creating virtual machines, setting up resource groups, configuring resource locks, and managing access permissions in a lab environment.</li>
+      <li>Engineered a CI/CD pipeline project using GitHub Actions, demonstrating version control, automated testing, and deployment practices to ensure reliable and repeatable software delivery.</li>
+    </ul>
+  </section>
 
-  <h2>Certifications</h2>
-  <ul>
-    <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
-    <li>Microsoft Certified: Security, Compliance, and Identity Fundamentals (SC-900)</li>
-    <li>Google Cybersecurity Certificate</li>
-    <li>(ISC)² Certified in Cybersecurity (CC)</li>
-  </ul>
+  <section id="work-experience">
+    <h2>Work Experience</h2>
 
-  <h2>Projects</h2>
-  <ul>
-    <li><strong>CI/CD Static Website:</strong> Built a personal website hosted on Azure Blob Storage with automated GitHub Actions deployment pipeline.</li>
-  </ul>
+    <h3>Customer Experience Manager, Nightlife Events Limited, London (2022 - 2025)</h3>
+    <ul>
+      <li>Managed logistics, guest engagement, and real-time scheduling for guided group events of up to 80 international attendees, using Google Sheets and WhatsApp to coordinate teams—demonstrating leadership, adaptability, and attention to service quality.</li>
+      <li>Planned and coordinated large-scale events for 300+ attendees using Trello for task tracking and Eventbrite for ticketing, coordinating across venues, staff, and vendors—showcasing logistical planning and cross-functional collaboration.</li>
+      <li>Utilized Eventbrite, Google Sheets, and WhatsApp Business to manage bookings, track attendance, and communicate with team leads—enhancing event planning efficiency and visibility.</li>
+    </ul>
 
-  <h2>Experience</h2>
-  <p><strong>Business Development & Event Roles</strong></p>
-  <ul>
-    <li>Used digital tools (CRM, Excel, dashboards) to streamline operations and improve communication.</li>
-    <li>Collaborated in fast-paced teams to solve logistical and operational issues under pressure.</li>
-  </ul>
+    <h3>Materials Management Operative, Eleanor Hospital Logistics, London (2022)</h3>
+    <ul>
+      <li>Oversaw PPE inventory and distribution across 60 hospital wards using NHS Supply Chain Portal, Microsoft Excel, and barcode scanners—ensuring timely and accurate delivery of critical supplies, with strong attention to detail and prioritization.</li>
+      <li>Collaborated with ward managers for data collection to reevaluate and update minimum stock levels, reducing PPE shortages by over 40% during the global supply chain crisis and maintaining uninterrupted support for critical care units—reflecting problem-solving and effective communication.</li>
+      <li>Supported the development of a new inventory app by reporting bugs, delivering daily feedback, and assisting with integration—contributing to its rollout across multiple NHS trusts and building skills in troubleshooting, new system implementation, and cross-functional collaboration.</li>
+    </ul>
 
-  <h2>Education</h2>
-  <p><strong>Generation UK&I Cloud Engineering Bootcamp</strong> (2024)</p>
+    <h3>General Manager, Business Development, E Nation Asia Trading, Inc., Miami (2015 - 2018)</h3>
+    <ul>
+      <li>Led the launch of a new East Coast logistics centre and drove market expansion of refurbished smartphones across South America, increasing sales by 30%—demonstrating leadership in strategic planning, cross-border operations, and remote team coordination.</li>
+      <li>Designed and implemented an IMEI-based tracking system leveraging Microsoft Excel and SQL queries to analyse sales patterns and return trends—reducing processing time by 50% and showcasing skills in data handling, automation, and process optimization.</li>
+      <li>Used digital tools including Google Analytics, Keyword Planner, and CRM platforms to generate leads—expanding the customer base by 40% in six months and contributing $500K in revenue—demonstrating adaptability and data-driven decision-making.</li>
+    </ul>
+  </section>
 
-  <div class="btn-container">
-    <a href="index.html" class="btn">← Back to Project Page</a>
-  </div>
+  <section id="education">
+    <h2>Education</h2>
+    <p><strong>University of Southern California, Los Angeles</strong> — Business Administration, B.S. (Graduated 2012)</p>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+      <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
+      <li>Microsoft Certified: Security, Compliance, and Identity Fundamentals (SC-900)</li>
+      <li>Google Cybersecurity Certificate</li>
+      <li>Wireshark for Beginners: Packet Capture (Coursera)</li>
+      <li>TCPDump Project Certificate (Coursera)</li>
+      <li>(ISC)² CyberSecurity Certificate (CC)</li>
+    </ul>
+  </section>
+
+  <section id="interests">
+    <h2>Interests</h2>
+    <p>I’m passionate about bachata dancing and kung fu sparring—both activities that challenge my ability to think quickly and adapt in fast-paced, high-pressure situations. Whether in teamwork or competition, I learn how to read subtle cues from others and react decisively, while also training myself to stay calm and regain control when situations take a surprising turn. These practices sharpen my analytical skills and train my mind to stay focused under pressure.</p>
+  </section>
+</main>
+
+<footer>
+  <p>📧 <a href="mailto:lokslondon@gmail.com" aria-label="Send email to Lok Tin Cheng">lokslondon@gmail.com</a> | 🔗 <a href="https://www.linkedin.com/in/loktin-cheng-1754a2293/" target="_blank" rel="noopener">LinkedIn</a> | 🐙 <a href="https://github.com/thisislok/porfolio" target="_blank" rel="noopener">GitHub Portfolio</a></p>
+</footer>
 
 </body>
 </html>
+
