@@ -11,20 +11,47 @@
       background: linear-gradient(135deg, #f0f4ff, #e4ebf9);
       color: #222;
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     .container {
       max-width: 960px;
-      margin: 40px auto;
-      padding: 20px;
+      margin: 40px auto 80px;
+      padding: 30px 40px;
       background: white;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
-      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      flex-grow: 1;
     }
 
     h1, h2 {
       color: #0a66c2;
       text-align: center;
+      margin-bottom: 0.3em;
+    }
+
+    h3.section-title {
+      margin-top: 48px;
+      margin-bottom: 12px;
+      border-bottom: 3px solid #0a66c2;
+      padding-bottom: 8px;
+      font-weight: 700;
+      color: #084a8a;
+    }
+
+    p, ul {
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1rem;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 2em;
+      margin-bottom: 1em;
     }
 
     .btn {
@@ -32,12 +59,18 @@
       background: #0a66c2;
       color: white;
       text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 6px;
+      padding: 14px 28px;
+      border-radius: 8px;
       font-weight: 600;
       margin: 20px auto;
-      box-shadow: 0 4px 8px rgba(10, 102, 194, 0.3);
+      box-shadow: 0 5px 14px rgba(10, 102, 194, 0.4);
       transition: background 0.3s ease;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      font-size: 1.1rem;
+      display: block;
+      max-width: 200px;
     }
 
     .btn:hover {
@@ -46,32 +79,59 @@
 
     .btn-container {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     img.diagram {
       display: block;
       max-width: 100%;
       height: auto;
-      margin: 20px auto;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 8px;
+      margin: 20px auto 30px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      border-radius: 10px;
+      border: 1px solid #ccc;
     }
 
     pre {
       background: #eef3fc;
-      padding: 16px;
-      border-radius: 6px;
+      padding: 18px 20px;
+      border-radius: 10px;
       overflow-x: auto;
       white-space: pre-wrap;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      box-shadow: inset 0 0 8px #d2e0fa;
+      max-width: 100%;
     }
 
-    .section-title {
-      margin-top: 40px;
-      margin-bottom: 16px;
-      border-bottom: 2px solid #0a66c2;
-      padding-bottom: 6px;
-      font-weight: 700;
+    footer {
+      background: #0a66c2;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      box-shadow: 0 -3px 15px rgba(10, 102, 194, 0.6);
+    }
+
+    footer a {
+      color: #a8cdfa;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    /* Fixed bottom button */
+    .fixed-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      box-shadow: 0 6px 20px rgba(10, 102, 194, 0.4);
     }
   </style>
 </head>
@@ -84,7 +144,7 @@
     <h1>CI/CD Pipeline Project</h1>
     <h2>Hosting with Azure Blob Storage + GitHub Actions</h2>
 
-    <p>This project shows how I deploy and update a static website using an automated GitHub Actions workflow and Azure Blob Storage.</p>
+    <p>This project demonstrates how I deploy and update a static website using an automated GitHub Actions workflow and Azure Blob Storage static website hosting.</p>
 
     <ul>
       <li>Create and configure Azure Storage Account</li>
@@ -94,15 +154,18 @@
     </ul>
 
     <h3 class="section-title">Step 1: Create Storage Account</h3>
+    <p>First, create an Azure Storage Account where your static website files will be hosted. This account acts as the backend for your site’s content storage.</p>
     <img src="image/azure-create-storage.png" class="diagram" alt="Create Azure Storage" />
 
     <h3 class="section-title">Step 2: Enable Static Website Hosting</h3>
+    <p>Next, enable static website hosting on your Azure Storage Account. This activates the special <code>$web</code> container where your website files will be served publicly.</p>
     <img src="image/enable-static-website.png" class="diagram" alt="Enable Static Website" />
 
-    <h3 class="section-title">Step 3: CI/CD via GitHub Actions</h3>
+    <h3 class="section-title">Step 3: Set Up CI/CD with GitHub Actions</h3>
+    <p>To automate deployments, I use GitHub Actions — a continuous integration and delivery platform. This workflow automatically uploads website files to Azure every time I push changes to the main branch.</p>
     <img src="image/github-actions-workflow.png" class="diagram" alt="GitHub Actions" />
 
-    <h3 class="section-title">Workflow YAML Example</h3>
+    <h3 class="section-title">How the Workflow Works</h3>
     <pre>
 name: Deploy to Azure Static Website
 
@@ -129,9 +192,35 @@ jobs:
               --overwrite
     </pre>
 
-    <div class="btn-container">
-      <a href="cv.html" class="btn">View My CV</a>
-    </div>
+    <h3 class="section-title">Breaking it Down</h3>
+    <p><strong>Workflow Name:</strong> This names the workflow as it appears in GitHub Actions.</p>
+    <p><strong>Trigger:</strong> Runs on every push to the <code>main</code> branch, ensuring your live site stays up to date.</p>
+    <p><strong>Job Environment:</strong> Runs on a fresh Ubuntu virtual machine.</p>
+    <p><strong>Steps:</strong></p>
+    <ul>
+      <li><strong>Checkout repository:</strong> Downloads your code so the workflow can access files.</li>
+      <li><strong>Upload files to Azure Storage:</strong> Uses the Azure CLI to batch upload all your site files to the <code>$web</code> container, replacing existing files to keep the site current.</li>
+    </ul>
+
+    <h3 class="section-title">Required GitHub Secrets</h3>
+    <ul>
+      <li><code>AZURE_STORAGE_ACCOUNT</code>: Your Azure Storage Account name</li>
+      <li><code>AZURE_STORAGE_KEY</code>: Access key for authentication with your storage account</li>
+    </ul>
+
+    <p>This CI/CD pipeline provides a seamless, automated way to keep your Azure static website updated with every code change pushed to GitHub.</p>
   </div>
+
+  <!-- Fixed bottom button to CV -->
+  <div class="fixed-btn">
+    <a href="cv.html" class="btn" aria-label="View my CV">View My CV</a>
+  </div>
+
+  <footer>
+    Contact me: 
+    <a href="mailto:your.email@example.com" target="_blank" rel="noopener">your.email@example.com</a> | 
+    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a> | 
+    <a href="https://github.com/yourgithub" target="_blank" rel="noopener">GitHub</a>
+  </footer>
 </body>
 </html>
