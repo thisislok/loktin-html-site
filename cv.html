@@ -1,24 +1,119 @@
-name: Deploy to Azure Static Website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lok Tin Cheng - CV</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #f2f4f8;
+      color: #222;
+    }
 
-on:
-  push:
-    branches:
-      - main
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0;
+      color: #0a66c2;
+    }
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    h2 {
+      font-size: 1.2em;
+      color: #444;
+      margin-top: 40px;
+      border-bottom: 2px solid #0a66c2;
+      padding-bottom: 6px;
+    }
 
-      - name: Upload files to Azure Storage
-        uses: azure/cli@v1
-        with:
-          inlineScript: |
-            az storage blob upload-batch --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
-            --account-key ${{ secrets.AZURE_STORAGE_KEY }} \
-            --destination '$web' \
-            --source '.' \
-            --overwrite
+    p, li {
+      line-height: 1.6;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #0a66c2;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      box-shadow: 0 4px 8px rgba(10, 102, 194, 0.3);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      margin: 10px auto;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #004182;
+      box-shadow: 0 6px 14px rgba(0, 65, 130, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Lok Tin Cheng</h1>
+    <p>Cloud Engineering | Azure | DevOps | Security Fundamentals</p>
+    <p>📍 London, UK | ✉️ loktin@example.com | 🌐 www.linkedin.com/in/loktincheng</p>
+  </header>
+
+  <div class="btn-container">
+    <a href="index.html" class="btn">← Back to Project Page</a>
+  </div>
+
+  <h2>Profile</h2>
+  <p>Transitioning into tech with a background in business development. Skilled in Azure, GitHub Actions, Terraform, Docker, and scripting. Strong communicator, problem-solver, and team player.</p>
+
+  <h2>Skills</h2>
+  <ul>
+    <li>Azure Fundamentals, CI/CD Pipelines, Static Web Apps</li>
+    <li>Terraform, Docker, Bash, Python</li>
+    <li>Networking, Identity, Cloud Security (SC-900, (ISC)² CC)</li>
+  </ul>
+
+  <h2>Certifications</h2>
+  <ul>
+    <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
+    <li>Microsoft Certified: Security, Compliance, and Identity Fundamentals (SC-900)</li>
+    <li>Google Cybersecurity Certificate</li>
+    <li>(ISC)² Certified in Cybersecurity (CC)</li>
+  </ul>
+
+  <h2>Projects</h2>
+  <ul>
+    <li><strong>CI/CD Static Website:</strong> Built a personal website hosted on Azure Blob Storage with automated GitHub Actions deployment pipeline.</li>
+  </ul>
+
+  <h2>Experience</h2>
+  <p><strong>Business Development & Event Roles</strong></p>
+  <ul>
+    <li>Used digital tools (CRM, Excel, dashboards) to streamline operations and improve communication.</li>
+    <li>Collaborated in fast-paced teams to solve logistical and operational issues under pressure.</li>
+  </ul>
+
+  <h2>Education</h2>
+  <p><strong>Generation UK&I Cloud Engineering Bootcamp</strong> (2024)</p>
+
+  <div class="btn-container">
+    <a href="index.html" class="btn">← Back to Project Page</a>
+  </div>
+
+</body>
+</html>
