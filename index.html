@@ -1,162 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lok Tin Cheng – CI/CD Static Website Project</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CI/CD Pipeline Project - Azure Static Website</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f8f9fa;
-      margin: 0;
-      color: #333;
-    }
-
-    header {
-      background-color: #0078d4;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0 0 0.5rem;
-      font-size: 2rem;
-    }
-
-    header p {
-      font-size: 1.1rem;
-    }
-
-    main {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-
-    section {
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-      margin-bottom: 2rem;
-      padding: 2rem;
-    }
-
-    h2 {
-      color: #0078d4;
-      margin-top: 0;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin: 1rem 0;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    }
-
-    code {
-      background-color: #eee;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-family: monospace;
-    }
-
-    ul {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #f9f9fb;
+      color: #222;
       line-height: 1.6;
     }
 
-    footer {
+    h1, h2 {
+      color: #0a66c2;
       text-align: center;
-      padding: 2rem;
-      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #0a66c2;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      box-shadow: 0 4px 8px rgba(10, 102, 194, 0.3);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      margin: 20px auto;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background: #004182;
+      box-shadow: 0 6px 14px rgba(0, 65, 130, 0.5);
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    img.diagram {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 40px;
+    }
+
+    code {
+      background: #eef3fc;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: #0a66c2;
+    }
+
+    .section-title {
+      margin-top: 40px;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #0a66c2;
+      padding-bottom: 6px;
+      font-weight: 700;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>CI/CD Static Website Project</h1>
-  <p>This site is built and deployed using GitHub Actions and Azure Blob Static Hosting.</p>
-  <p>Every change I make locally in GitHub is automatically deployed—this website is the CI/CD result!</p>
-</header>
-<a href="cv.html" class="btn">View My CV</a>
+  <div class="btn-container">
+    <a href="cv.html" class="btn" aria-label="View my CV">View My CV</a>
+  </div>
 
-<main>
+  <h1>CI/CD Pipeline Project</h1>
+  <h2>Hosting this Website using Azure Blob Storage and GitHub Actions</h2>
 
-  <section>
-    <h2>🚀 Step 1: Create an Azure Storage Account</h2>
-    <ul>
-      <li>Go to the Azure Portal > <strong>Create a resource</strong> > <strong>Storage</strong> > <strong>Storage account</strong>.</li>
-      <li>Configure: choose Subscription, Resource Group, and a unique Storage Account name.</li>
-      <li>Select Blob Storage as Primary Service, LRS redundancy.</li>
-      <li>Click <strong>Review + Create</strong>.</li>
-    </ul>
-    <img src="images/azure-create-storage.png" alt="Create Storage Account screenshot">
-  </section>
+  <p>
+    This project demonstrates a full <strong>CI/CD pipeline</strong> where I build, test, and deploy this static website by pushing code from my local GitHub repository to Azure Blob Storage static website hosting.
+  </p>
 
-  <section>
-    <h2>🌐 Step 2: Enable Static Website Hosting</h2>
-    <ul>
-      <li>In your Storage Account, go to <strong>Static website</strong> (under Data Management).</li>
-      <li>Click <strong>Enable</strong>.</li>
-      <li>Set <code>index.html</code> and <code>error.html</code>.</li>
-      <li>Click Save. Azure gives you a public website URL.</li>
-    </ul>
-    <img src="images/enable-static-website.png" alt="Enable static website hosting in Azure">
-  </section>
+  <p>
+    Below is a step-by-step illustrated guide showing how I:
+  </p>
 
-  <section>
-    <h2>📂 Step 3: Upload Static Files</h2>
-    <ul>
-      <li>Go to the <strong>$web</strong> container under Containers in Azure Portal.</li>
-      <li>Upload your HTML, CSS, JS, and image files into the container.</li>
-    </ul>
-    <img src="images/static-hosting-setup.png" alt="Upload files to Azure Storage $web container">
-  </section>
+  <ul>
+    <li>Create and configure an Azure Storage Account for static website hosting</li>
+    <li>Enable static website hosting on Azure Blob Storage</li>
+    <li>Upload website files to the special <code>$web</code> container</li>
+    <li>Set up a GitHub Actions workflow to automatically deploy changes on <code>git push</code></li>
+  </ul>
 
-  <section>
-    <h2>🔄 Step 4: CI/CD Pipeline with GitHub Actions</h2>
-    <p>This project is fully automated: I push updates to GitHub, and my website updates instantly on Azure using a CI/CD pipeline.</p>
+  <h3 class="section-title">Step 1: Deploy a Static Website</h3>
+  <ol>
+    <li>Go to the Azure Portal. Click <strong>Create a resource &gt; Storage &gt; Storage account</strong>.</li>
+    <li>Configure required settings (Subscription, Resource Group, unique Storage Account name, Region, Performance as Standard, Azure Blob Storage as Primary Service, LRS redundancy).</li>
+    <li>Click <strong>Review + Create</strong>, then <strong>Create</strong>.</li>
+  </ol>
 
-    <ul>
-      <li>Created a GitHub repo and pushed my website code.</li>
-      <li>In Azure, generated a Deployment Token and stored it in GitHub Secrets as <code>AZURE_STORAGE_KEY</code> and <code>AZURE_STORAGE_ACCOUNT</code>.</li>
-      <li>Added a GitHub Actions workflow in <code>.github/workflows/deploy.yml</code>.</li>
-    </ul>
+  <img src="images/step1-create-storage.png" alt="Azure Storage Account creation in portal" class="diagram" />
 
-    <img src="images/github-actions-workflow.png" alt="GitHub Actions deployment workflow">
-    
-    <p>My workflow looks like this:</p>
-    <pre><code>name: Deploy to Azure Static Website
+  <h3 class="section-title">Step 2: Enable Static Website Hosting</h3>
+  <ol>
+    <li>Open the storage account. Navigate to <strong>Static website</strong> (under Data Management), click <strong>Enable</strong>.</li>
+    <li>Enter homepage file name (e.g., <code>index.html</code>) and error page (<code>error.html</code>).</li>
+    <li>Click <strong>Save</strong>. Azure will generate a <strong>Primary Endpoint URL</strong> for your website.</li>
+  </ol>
+
+  <img src="images/step2-enable-static-website.png" alt="Enable Static Website settings in Azure portal" class="diagram" />
+
+  <h3 class="section-title">Step 3: Upload Website Files</h3>
+  <ol>
+    <li>Navigate to <strong>Storage Explorer</strong> or <strong>Containers</strong> in Azure Portal.</li>
+    <li>Open the <code>$web</code> container.</li>
+    <li>Click <strong>Upload</strong> and select your static files (HTML, CSS, JavaScript).</li>
+    <li>Click <strong>Upload</strong> to publish.</li>
+  </ol>
+
+  <img src="images/step3-upload-files.png" alt="Upload files to $web container" class="diagram" />
+
+  <h3 class="section-title">Step 4: Build a CI/CD Pipeline with GitHub Actions</h3>
+  <p>
+    Using <strong>GitHub Actions</strong>, I automated deployments so that every <code>git push</code> to the <code>main</code> branch triggers this workflow:
+  </p>
+  <ul>
+    <li>Checkout the repo code</li>
+    <li>Run Azure CLI command to upload website files to Azure Blob Storage</li>
+  </ul>
+
+  <img src="images/step4-github-actions.png" alt="GitHub Actions workflow overview" class="diagram" />
+
+  <h3 class="section-title">Key GitHub Actions Workflow Code</h3>
+  <pre>
+name: Deploy to Azure Static Website
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Upload files
-        uses: azure/CLI@v1
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Upload files to Azure Storage
+        uses: azure/cli@v1
         with:
           inlineScript: |
             az storage blob upload-batch --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
             --account-key ${{ secrets.AZURE_STORAGE_KEY }} \
-            --destination '$web' --source '.' --overwrite
-</code></pre>
+            --destination '$web' \
+            --source '.' \
+            --overwrite
+  </pre>
 
-    <p>Every time I push to <code>main</code>, this pipeline uploads the latest files to Azure!</p>
-  </section>
-
-</main>
-<a href="cv.html" class="btn">View My CV</a>
-
-<footer>
-  <p>Built by Lok Tin Cheng | 2025 | Azure + GitHub Actions</p>
-</footer>
+  <div class="btn-container">
+    <a href="cv.html" class="btn" aria-label="View my CV">View My CV</a>
+  </div>
 
 </body>
 </html>
