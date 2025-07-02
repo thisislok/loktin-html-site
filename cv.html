@@ -6,155 +6,208 @@
   <title>Lok Tin Cheng - CV</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background: #f4f8fc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(145deg, #e4f0ff, #f5f8fa);
       color: #222;
-      line-height: 1.6;
     }
 
-    .container {
+    .accordion {
       max-width: 900px;
       margin: 40px auto;
-      padding: 20px;
       background: white;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
       border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
     }
 
-    h1, h2, h3 {
-      color: #0a66c2;
+    .accordion-section {
+      border-bottom: 1px solid #ddd;
     }
 
-    .section {
-      margin-bottom: 30px;
+    .accordion-header {
+      background: #0a66c2;
+      color: white;
+      cursor: pointer;
+      padding: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: background 0.3s ease;
     }
 
-    .section h3 {
-      margin-bottom: 10px;
-      border-bottom: 2px solid #0a66c2;
-      padding-bottom: 4px;
+    .accordion-header:hover {
+      background: #004182;
     }
 
-    ul {
+    .accordion-content {
+      display: none;
+      padding: 20px;
+      background: #fff;
+      animation: fadeIn 0.4s ease-in;
+    }
+
+    .accordion-content ul {
       padding-left: 20px;
     }
 
-    a {
-      color: #0a66c2;
+    .accordion-content li {
+      margin-bottom: 10px;
+    }
+
+    .active + .accordion-content {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .contact {
-      margin-top: 10px;
+      text-align: center;
+      padding: 30px;
+      background: #ffffff;
+    }
+
+    .contact h1 {
+      margin-bottom: 10px;
+    }
+
+    .contact a {
+      color: #0a66c2;
+      text-decoration: none;
+      margin: 0 10px;
     }
 
     .btn-container {
       text-align: center;
-      margin: 30px 0;
+      margin: 40px;
     }
 
     .btn {
-      display: inline-block;
       background: #0a66c2;
       color: white;
-      text-decoration: none;
       padding: 12px 24px;
       border-radius: 6px;
-      font-weight: 600;
-      box-shadow: 0 4px 8px rgba(10, 102, 194, 0.3);
-      transition: background 0.3s ease;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     .btn:hover {
       background: #004182;
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".accordion-header").forEach(header => {
+        header.addEventListener("click", () => {
+          header.classList.toggle("active");
+          const content = header.nextElementSibling;
+          content.style.display = content.style.display === "block" ? "none" : "block";
+        });
+      });
+    });
+  </script>
 </head>
 <body>
-  <div class="container">
+  <div class="contact">
     <h1>Lok Tin Cheng</h1>
-    <p class="contact">
-      London, UK<br>
-      <a href="mailto:lokslondon@gmail.com">lokslondon@gmail.com</a> | +44 7897 243699<br>
-      <a href="https://www.linkedin.com/in/ltcheng/" target="_blank">LinkedIn</a> |
-      <a href="https://github.com/ltcheng" target="_blank">GitHub</a>
-    </p>
+    <p>London, UK</p>
+    <p><a href="mailto:lokslondon@gmail.com">lokslondon@gmail.com</a> | +44 7897 243699</p>
+    <p><a href="https://www.linkedin.com/in/ltcheng/" target="_blank">LinkedIn</a></p>
+  </div>
 
-    <div class="section">
-      <h3>Personal Statement</h3>
-      <p>Skilled business development professional transitioning into cloud development, with comprehensive training from the Generation UK&I Cloud Engineering Bootcamp. Certified in Microsoft AZ-900, SC-900, Google Cybersecurity, and (ISC)² CC, with hands-on experience in Terraform, Docker, MySQL, Python, Bash, Azure configuration and server deployment, CI/CD pipelines, Git, and cybersecurity. Leveraging a strong business development background, combines expertise in product design, stakeholder management, and communication with IT technical skills to deliver impactful solutions in cloud development roles.</p>
+  <div class="accordion">
+    <div class="accordion-section">
+      <div class="accordion-header">Personal Statement</div>
+      <div class="accordion-content">
+        <p>Skilled business development professional transitioning into cloud development, with comprehensive training from the Generation UK&I Cloud Engineering Bootcamp. Certified in Microsoft AZ-900, SC-900, Google Cybersecurity, and (ISC)² CC, with hands-on experience in Terraform, Docker, MySQL, Python, Bash, Azure configuration and server deployment, CI/CD pipelines, Git, and cybersecurity. Leveraging a strong business development background, combines expertise in product design, stakeholder management, and communication with IT technical skills to deliver impactful solutions in cloud development roles.</p>
+      </div>
     </div>
 
-    <div class="section">
-      <h3>Technical Skills</h3>
-      <ul>
-        <li><strong>Python, PowerShell & Bash Scripting:</strong> Automated cloud tasks, wrote utility scripts, and handled file operations to boost efficiency.</li>
-        <li><strong>Terraform, Docker & Kubernetes:</strong> Managed cloud infrastructure and containerized environments for automated deployments.</li>
-        <li><strong>SQL Development & Querying:</strong> Built and queried relational schemas to validate and organize data.</li>
-        <li><strong>Linux System Management:</strong> Administered servers, resolved access issues, and maintained platforms like WordPress.</li>
-        <li><strong>Azure Cloud Management:</strong> Configured services including VMs, Entra ID, Sentinel, and Purview; resolved incidents in lab environments.</li>
-        <li><strong>CI/CD & GitHub Integration:</strong> Set up pipelines linking GitHub with Azure to automate testing and deployment.</li>
-      </ul>
+    <div class="accordion-section">
+      <div class="accordion-header">Technical Skills</div>
+      <div class="accordion-content">
+        <ul>
+          <li><strong>Python, PowerShell & Bash Scripting:</strong> Automated cloud tasks, wrote utility scripts, and handled file operations.</li>
+          <li><strong>Terraform, Docker & Kubernetes:</strong> Managed cloud infrastructure and containerized environments.</li>
+          <li><strong>SQL Development & Querying:</strong> Managed schemas, defined keys, and wrote complex queries.</li>
+          <li><strong>Linux System Management:</strong> Administered servers, applied patches, and used SSH/Bash for automation.</li>
+          <li><strong>Azure Cloud Management:</strong> Configured and monitored Azure services including VMs, Entra ID, Sentinel, and Purview.</li>
+          <li><strong>CI/CD & GitHub Integration:</strong> Automated deployment pipelines using GitHub and Azure.</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="section">
-      <h3>Professional Training</h3>
-      <p><strong>Azure Cloud Developer (Training)</strong> – Generation UK & Ireland, London, 2025</p>
-      <ul>
-        <li>Built and provisioned infrastructure with Terraform; managed Docker containers.</li>
-        <li>Automated tasks using Python and Bash; deployed 50+ operations via SSH.</li>
-        <li>Created and configured 10+ Azure VMs and resource groups; managed access and permissions.</li>
-        <li>Engineered CI/CD pipeline using GitHub Actions for automated testing and deployment.</li>
-      </ul>
+    <div class="accordion-section">
+      <div class="accordion-header">Professional Training</div>
+      <div class="accordion-content">
+        <p><strong>Azure Cloud Developer (Training)</strong> – Generation UK & Ireland, London, 2025</p>
+        <ul>
+          <li>Built infrastructure using Terraform and managed Docker containers.</li>
+          <li>Automated deployment and tasks with Python/Bash and SSH (50+ operations).</li>
+          <li>Deployed 10+ Azure VMs and configured resource access/locks.</li>
+          <li>Created CI/CD pipelines using GitHub Actions for automation.</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="section">
-      <h3>Work Experience</h3>
-      <p><strong>Customer Experience Manager</strong> – Nightlife Events Limited, London (2022–2025)</p>
-      <ul>
-        <li>Led logistics for 80+ attendee events; coordinated teams via Microsoft Teams and WhatsApp.</li>
-        <li>Planned events for 300+ attendees using Trello and Eventbrite; managed bookings and task tracking.</li>
-        <li>Enhanced operational visibility using Google Sheets for team coordination and attendance tracking.</li>
-      </ul>
-      <p><strong>Materials Management Operative</strong> – Eleanor Hospital Logistics, London (2022)</p>
-      <ul>
-        <li>Supported development of inventory app; provided bug reports and feedback during 200+ hours of use.</li>
-        <li>Managed PPE inventory across 60 wards using NHS Portal, Excel, and barcode tools.</li>
-        <li>Reduced PPE shortages by 40% through data-driven analysis and stakeholder collaboration.</li>
-      </ul>
-      <p><strong>General Manager, Business Development</strong> – E Nation Asia Trading, Inc., Miami (2015–2018)</p>
-      <ul>
-        <li>Generated 40% customer growth using Google Analytics, Zoho CRM, and Keyword Planner.</li>
-        <li>Built IMEI-based tracking system with Excel and SQL; reduced return processing time by 50%.</li>
-        <li>Launched logistics center with Google Suite tools for communication, access control, and integration.</li>
-      </ul>
+    <div class="accordion-section">
+      <div class="accordion-header">Work Experience</div>
+      <div class="accordion-content">
+        <p><strong>Customer Experience Manager – Nightlife Events Limited, London (2022–2025)</strong></p>
+        <ul>
+          <li>Coordinated logistics and engagement for 80+ guest events via Teams and WhatsApp.</li>
+          <li>Planned 300+ attendee events using Trello and Eventbrite.</li>
+          <li>Used Google Sheets/Eventbrite to track attendance and planning.</li>
+        </ul>
+        <p><strong>Materials Management Operative – Eleanor Hospital Logistics, London (2022)</strong></p>
+        <ul>
+          <li>Tested inventory app, reporting bugs and contributing 200+ hours of feedback.</li>
+          <li>Managed PPE across 60 hospital wards using NHS Portal, Excel, and barcodes.</li>
+          <li>Reduced PPE shortages by 40% by improving stock policies.</li>
+        </ul>
+        <p><strong>General Manager, Business Development – E Nation Asia Trading, Inc., Miami (2015–2018)</strong></p>
+        <ul>
+          <li>Increased customer base by 40% using digital tools like Google Analytics and Zoho CRM.</li>
+          <li>Built IMEI tracking with Excel/SQL; reduced return time by 50%.</li>
+          <li>Launched logistics hub using Google Suite for integration and access management.</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="section">
-      <h3>Education</h3>
-      <p><strong>University of Southern California</strong>, Los Angeles<br>B.S. in Business Administration – Graduated 2012</p>
+    <div class="accordion-section">
+      <div class="accordion-header">Education</div>
+      <div class="accordion-content">
+        <p><strong>University of Southern California</strong>, Los Angeles<br>B.S. in Business Administration – Graduated 2012</p>
+      </div>
     </div>
 
-    <div class="section">
-      <h3>Certifications</h3>
-      <ul>
-        <li>Microsoft Certified: Azure Fundamentals (AZ-900) – 2025</li>
-        <li>Google Cybersecurity Certificate – 2024</li>
-        <li>Wireshark for Beginners (Coursera) – 2024</li>
-        <li>Microsoft Certified: SC-900 – 2023</li>
-        <li>(ISC)² CyberSecurity Certificate (CC) – 2023</li>
-        <li>TCPDump Project Certificate (Coursera) – 2023</li>
-      </ul>
+    <div class="accordion-section">
+      <div class="accordion-header">Certifications</div>
+      <div class="accordion-content">
+        <ul>
+          <li>Microsoft Certified: Azure Fundamentals (AZ-900) – 2025</li>
+          <li>Google Cybersecurity Certificate – 2024</li>
+          <li>Wireshark for Beginners (Coursera) – 2024</li>
+          <li>Microsoft Certified: SC-900 – 2023</li>
+          <li>(ISC)² CyberSecurity Certificate (CC) – 2023</li>
+          <li>TCPDump Project Certificate (Coursera) – 2023</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="section">
-      <h3>Interests</h3>
-      <p>I’m passionate about bachata dancing and kung fu sparring—both activities that challenge my ability to think quickly and adapt in fast-paced, high-pressure situations. These practices sharpen my analytical skills and train my mind to stay focused under pressure.</p>
+    <div class="accordion-section">
+      <div class="accordion-header">Interests</div>
+      <div class="accordion-content">
+        <p>I’m passionate about bachata dancing and kung fu sparring—both challenge my ability to think quickly and adapt. These hobbies help sharpen my analytical focus under pressure.</p>
+      </div>
     </div>
+  </div>
 
-    <div class="btn-container">
-      <a href="index.html" class="btn">Back to Project Page</a>
-    </div>
+  <div class="btn-container">
+    <a href="index.html" class="btn">Back to Project Page</a>
   </div>
 </body>
 </html>
+
