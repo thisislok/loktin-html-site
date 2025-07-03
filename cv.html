@@ -8,57 +8,56 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: radial-gradient(circle at top left, #e4f0ff, #d3e0f5, #f0f4f8);
+      background: linear-gradient(145deg, #dfefff, #f5f8fa);
       color: #222;
-      scroll-behavior: smooth;
     }
 
     .accordion {
-      max-width: 960px;
+      max-width: 900px;
       margin: 40px auto;
       background: white;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
       overflow: hidden;
-      transition: all 0.3s ease;
     }
 
     .accordion-section {
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #ddd;
     }
 
     .accordion-header {
-      background: #004182;
+      background: #0a66c2;
       color: white;
       cursor: pointer;
       padding: 20px;
       font-size: 1.2rem;
       font-weight: bold;
       transition: background 0.3s ease;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .accordion-header:hover {
-      background: #002f5a;
+      position: relative;
     }
 
     .accordion-header::after {
       content: '+';
-      font-size: 1.5rem;
+      position: absolute;
+      right: 20px;
       transition: transform 0.3s ease;
     }
 
     .accordion-header.active::after {
       content: '-';
+      transform: rotate(180deg);
     }
 
     .accordion-content {
-      display: none;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 20px;
+    }
+
+    .accordion-header.active + .accordion-content {
+      max-height: 2000px;
       padding: 20px;
-      background: #f9f9f9;
-      animation: fadeIn 0.4s ease-in;
     }
 
     .accordion-content ul {
@@ -69,67 +68,49 @@
       margin-bottom: 10px;
     }
 
-    .accordion-header.active + .accordion-content {
-      display: block;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     .contact {
       text-align: center;
-      padding: 40px;
-      background: linear-gradient(120deg, #ffffff, #f0f4f8);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      border-radius: 0 0 12px 12px;
+      padding: 30px;
+      background: #ffffff;
     }
 
     .contact h1 {
-      margin-bottom: 5px;
-      font-size: 2rem;
+      margin-bottom: 10px;
     }
 
-    .contact p, .contact a {
-      color: #333;
-      margin: 4px 0;
-      text-decoration: none;
-    }
-
-    .contact a:hover {
+    .contact a {
       color: #0a66c2;
+      text-decoration: none;
+      margin: 0 10px;
     }
 
     .btn-container {
       text-align: center;
-      margin: 50px;
+      margin: 40px;
     }
 
     .btn {
       background: #0a66c2;
       color: white;
-      padding: 14px 28px;
-      border-radius: 8px;
+      padding: 12px 24px;
+      border-radius: 6px;
       text-decoration: none;
-      font-size: 1rem;
       font-weight: bold;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .btn:hover {
       background: #004182;
-      transform: translateY(-2px);
     }
   </style>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".accordion-header").forEach(header => {
         header.addEventListener("click", () => {
-          header.classList.toggle("active");
-          const content = header.nextElementSibling;
-          content.style.display = content.style.display === "block" ? "none" : "block";
+          const wasActive = header.classList.contains("active");
+          document.querySelectorAll(".accordion-header").forEach(h => h.classList.remove("active"));
+          if (!wasActive) {
+            header.classList.add("active");
+          }
         });
       });
     });
@@ -140,7 +121,7 @@
     <h1>Lok Tin Cheng</h1>
     <p>London, UK</p>
     <p><a href="mailto:lokslondon@gmail.com">lokslondon@gmail.com</a> | +44 7897 243699</p>
-    <p><a href="https://www.linkedin.com/in/ltcheng/" target="_blank">LinkedIn Profile</a></p>
+    <p><a href="https://www.linkedin.com/in/ltcheng/" target="_blank">LinkedIn</a></p>
   </div>
 
   <div class="accordion">
@@ -155,12 +136,12 @@
       <div class="accordion-header">Technical Skills</div>
       <div class="accordion-content">
         <ul>
-          <li><strong>Python, PowerShell & Bash Scripting:</strong> Automated cloud tasks, wrote utility scripts, and handled file operations.</li>
-          <li><strong>Terraform, Docker & Kubernetes:</strong> Managed cloud infrastructure and containerized environments.</li>
-          <li><strong>SQL Development & Querying:</strong> Managed schemas, defined keys, and wrote complex queries.</li>
-          <li><strong>Linux System Management:</strong> Administered servers, applied patches, and used SSH/Bash for automation.</li>
-          <li><strong>Azure Cloud Management:</strong> Configured and monitored Azure services including VMs, Entra ID, Sentinel, and Purview.</li>
-          <li><strong>CI/CD & GitHub Integration:</strong> Automated deployment pipelines using GitHub and Azure.</li>
+          <li><strong>Python, PowerShell & Bash Scripting:</strong> Automated cloud tasks, wrote utility scripts, and handled file operations to boost efficiency and reduce manual effort.</li>
+          <li><strong>Terraform, Docker & Kubernetes:</strong> Managed cloud infrastructure and containerized environments to support scalable, consistent, and automated deployments.</li>
+          <li><strong>SQL Development & Querying:</strong> Created and managed relational database schemas, defined tables with primary and foreign keys, and wrote complex join queries to retrieve, filter, and organize data for validation and operational support.</li>
+          <li><strong>Linux System Management:</strong> Administered servers, configured remote server, resolved access and service issues, applied patches, and maintained platforms like WordPress using Bash scripting and SSH.</li>
+          <li><strong>Azure Cloud Management:</strong> Configured and monitored Azure services including compute services, Entra ID, Sentinel, and Purview, with hands-on experience resolving incidents in lab environments.</li>
+          <li><strong>CI/CD & GitHub Integration:</strong> Utilized GitHub for version control by committing and pushing code from local environments to remote repositories, and set up CI/CD pipelines linking GitHub with the Azure portal to automate container updates and deployments.</li>
         </ul>
       </div>
     </div>
@@ -170,10 +151,10 @@
       <div class="accordion-content">
         <p><strong>Azure Cloud Developer (Training)</strong> – Generation UK & Ireland, London, 2025</p>
         <ul>
-          <li>Built infrastructure using Terraform and managed Docker containers.</li>
-          <li>Automated deployment and tasks with Python/Bash and SSH (50+ operations).</li>
-          <li>Deployed 10+ Azure VMs and configured resource access/locks.</li>
-          <li>Created CI/CD pipelines using GitHub Actions for automation.</li>
+          <li>Built and provisioned cloud infrastructure using Terraform. Configured and managed containerized environments to support scalable and consistent deployments.</li>
+          <li>Used Python and Bash to navigate servers. Automated deployment and maintenance tasks by performing 50+ remote operations over SSH, and deployed software including in WordPress environments.</li>
+          <li>Deployed and managed Azure resources via the Azure Portal, creating 10+ virtual machines, setting up resource groups, configuring resource locks, and managing access permissions in a lab environment.</li>
+          <li>Engineered a CI/CD pipeline project using GitHub Actions, demonstrating version control, automated testing, and deployment to ensure reliable and repeatable software delivery.</li>
         </ul>
       </div>
     </div>
@@ -183,21 +164,21 @@
       <div class="accordion-content">
         <p><strong>Customer Experience Manager – Nightlife Events Limited, London (2022–2025)</strong></p>
         <ul>
-          <li>Coordinated logistics and engagement for 80+ guest events via Teams and WhatsApp.</li>
-          <li>Planned 300+ attendee events using Trello and Eventbrite.</li>
-          <li>Used Google Sheets/Eventbrite to track attendance and planning.</li>
+          <li>Led logistics and guest engagement for guided group events (80+ attendees), coordinating teams and vendors via Microsoft Teams and WhatsApp Business, showcasing leadership and adaptability.</li>
+          <li>Planned and coordinated large-scale events for 300+ attendees using Trello for task tracking and Eventbrite for ticketing, coordinating across venues, staff, and vendors—executing logistical planning and cross-functional collaboration.</li>
+          <li>Utilized Google Sheets and Eventbrite to manage bookings, track attendance, and coordinate with team leads—enhancing event planning efficiency and visibility.</li>
         </ul>
         <p><strong>Materials Management Operative – Eleanor Hospital Logistics, London (2022)</strong></p>
         <ul>
-          <li>Tested inventory app, reporting bugs and contributing 200+ hours of feedback.</li>
-          <li>Managed PPE across 60 hospital wards using NHS Portal, Excel, and barcodes.</li>
-          <li>Reduced PPE shortages by 40% by improving stock policies.</li>
+          <li>Supported the development of a new inventory app over 200+ hours by reporting bugs, delivering daily feedback, and assisting with integration—contributing to its rollout across 4 NHS trusts and building skills in troubleshooting, new system implementation, and cross-functional collaboration.</li>
+          <li>Oversaw PPE inventory and distribution across 60 hospital wards using NHS Supply Chain Portal, Microsoft Excel, and barcode scanners—ensuring timely and accurate delivery of critical supplies, with strong attention to detail and prioritization.</li>
+          <li>Collaborated with ward managers for data collection to reevaluate and update minimum stock levels, reducing PPE shortages by over 40% during the global supply chain crisis and maintaining uninterrupted support for critical care units—reflecting problem-solving and effective communication.</li>
         </ul>
         <p><strong>General Manager, Business Development – E Nation Asia Trading, Inc., Miami (2015–2018)</strong></p>
         <ul>
-          <li>Increased customer base by 40% using digital tools like Google Analytics and Zoho CRM.</li>
-          <li>Built IMEI tracking with Excel/SQL; reduced return time by 50%.</li>
-          <li>Launched logistics hub using Google Suite for integration and access management.</li>
+          <li>Used digital tools including Google Analytics, Keyword Planner, and Zoho CRM platforms to generate leads—expanding the customer base by 40% in six months and contributing $500K in revenue—showcasing adaptability and analytical approach to growth.</li>
+          <li>Designed and implemented an IMEI-based tracking system leveraging Microsoft Excel and SQL queries to analyse sales patterns and return trends—reducing processing time by 50% and applying skills in data handling, automation, and process optimization.</li>
+          <li>Led the launch of a new East Coast logistics centre by building an internal communication and integration system using Google Suite—streamlining workflows, unifying remote teams, and setting up access permissions. This illustrates experience in management operations, remote team coordination, and system integration.</li>
         </ul>
       </div>
     </div>
@@ -216,7 +197,7 @@
           <li>Microsoft Certified: Azure Fundamentals (AZ-900) – 2025</li>
           <li>Google Cybersecurity Certificate – 2024</li>
           <li>Wireshark for Beginners (Coursera) – 2024</li>
-          <li>Microsoft Certified: SC-900 – 2023</li>
+          <li>Microsoft Certified: Security, Compliance, and Identity Fundamentals (SC-900) – 2023</li>
           <li>(ISC)² CyberSecurity Certificate (CC) – 2023</li>
           <li>TCPDump Project Certificate (Coursera) – 2023</li>
         </ul>
@@ -226,7 +207,7 @@
     <div class="accordion-section">
       <div class="accordion-header">Interests</div>
       <div class="accordion-content">
-        <p>I’m passionate about bachata dancing and kung fu sparring—both challenge my ability to think quickly and adapt. These hobbies help sharpen my analytical focus under pressure.</p>
+        <p>I’m passionate about bachata dancing and kung fu sparring—both activities that challenge my ability to think quickly and adapt in fast-paced, high-pressure situations. Whether in teamwork or competition, I learn how to read subtle cues from others and react decisively, while also training myself to stay calm and regain control when situations take a surprising turn. These practices sharpen my analytical skills and train my mind to stay focused under pressure.</p>
       </div>
     </div>
   </div>
