@@ -1,238 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lok Tin Cheng - CV</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #000000;
-      color: #eee;
-    }
-
-    .accordion {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #121212;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(255, 255, 255, 0.08);
-      overflow: hidden;
-    }
-
-    .accordion-section {
-      border-bottom: 1px solid #444;
-    }
-
-    .accordion-header {
-      background: #0a66c2;
-      color: white;
-      cursor: pointer;
-      padding: 20px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      transition: background 0.3s ease;
-      position: relative;
-    }
-
-    .accordion-header::after {
-      content: '+';
-      position: absolute;
-      right: 20px;
-      transition: transform 0.3s ease;
-    }
-
-    .accordion-header.active::after {
-      content: '-';
-      transform: rotate(180deg);
-    }
-
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s ease;
-      padding: 0 20px;
-      color: #ddd;
-    }
-
-    .accordion-header.active + .accordion-content {
-      max-height: 2000px;
-      padding: 20px;
-    }
-
-    .accordion-content ul {
-      padding-left: 20px;
-    }
-
-    .accordion-content li {
-      margin-bottom: 10px;
-    }
-
-    .contact {
-      text-align: center;
-      padding: 30px;
-      background: #121212;
-      color: #eee;
-    }
-
-    .contact h1 {
-      margin-bottom: 10px;
-    }
-
-    .contact p {
-      margin: 5px 0;
-    }
-
-    .contact a {
-      color: #0a66c2;
-      text-decoration: none;
-      margin: 0 10px;
-      word-break: break-word;
-    }
-
-    .btn-container {
-      text-align: center;
-      margin: 40px;
-    }
-
-    .btn {
-      background: #0a66c2;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .btn:hover {
-      background: #004182;
-    }
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; }
+    h1, h2 { color: #2c3e50; }
+    h1 { font-size: 28px; margin-bottom: 5px; }
+    h2 { margin-top: 30px; font-size: 20px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+    p, li { font-size: 14px; }
+    ul { list-style-type: disc; margin-left: 20px; }
+    .contact a { color: #2980b9; text-decoration: none; }
+    .section { margin-bottom: 20px; }
   </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.querySelectorAll(".accordion-header").forEach(header => {
-        header.addEventListener("click", () => {
-          const wasActive = header.classList.contains("active");
-          document.querySelectorAll(".accordion-header").forEach(h => h.classList.remove("active"));
-          if (!wasActive) {
-            header.classList.add("active");
-          }
-        });
-      });
-    });
-  </script>
 </head>
 <body>
-  <div class="contact">
-    <h1>Lok Tin Cheng</h1>
-    <p>London, UK</p>
-    <p><a href="mailto:lokslondon@gmail.com">lokslondon@gmail.com</a> | +44 7897 243699</p>
-    <p>
-      <a href="https://www.linkedin.com/in/ltcheng/" target="_blank">LinkedIn</a> | 
-      <a href="https://github.com/thisislok" target="_blank">GitHub</a>
-    </p>
+
+  <h1>Lok Tin Cheng</h1>
+  <p class="contact">
+    London, UK<br>
+    <a href="mailto:lokslondon@gmail.com">lokslondon@gmail.com</a> | 
+    <a href="https://linkedin.com/in/ltcheng">linkedin.com/in/ltcheng</a> | 
+    <a href="https://github.com/thisislok">github.com/thisislok</a>
+  </p>
+
+  <div class="section">
+    <h2>Personal Statement</h2>
+    <p>IT professional with hands-on cloud training and a background in business development. Experienced in cloud systems, automation, and cybersecurity. Trained through the Generation UK&I Cloud Engineering Bootcamp and certified in foundational Azure and cybersecurity skills. Brings a blend of practical tech abilities and cross-functional strengths in communication, collaboration, and problem-solving, developed in previous business roles. Ready to make an impact by supporting the team through practical skills and a collaborative approach.</p>
   </div>
 
-  <div class="accordion">
-    <div class="accordion-section">
-      <div class="accordion-header">Personal Statement</div>
-      <div class="accordion-content">
-        <p>Junior cloud engineer with a background in business development and hands-on experience in cloud infrastructure, scripting, and cybersecurity. Trained through the Generation UK&I Cloud Engineering Bootcamp and certified in AZ-900, SC-900, Google Cybersecurity, and (ISC)² CC. Skilled in Terraform, Docker, MySQL, Python, Bash, PowerShell, Azure services, CI/CD pipelines, GitHub Actions, and cloud security practices. Applies technical skills alongside communication, stakeholder collaboration, and problem-solving abilities developed in business roles. Ready to make an impact by supporting cloud engineering teams through practical skills and ongoing technical development.</p>
-      </div>
-    </div>
-
-    <div class="accordion-section">
-      <div class="accordion-header">Technical Skills</div>
-      <div class="accordion-content">
-        <ul>
-          <li><strong>Scripting (Python, PowerShell, Bash):</strong> Automated cloud tasks, wrote utility scripts, and managed file operations to reduce manual workload.</li>
-          <li><strong>Infrastructure (Terraform, Docker, Kubernetes):</strong> Built and managed infrastructure-as-code and standardized container and infrastructure setup for team use.</li>
-          <li><strong>Database (SQL):</strong> Created and managed relational database schemas, defined tables with primary and foreign keys, and wrote complex join queries to retrieve, filter, and organize data for validation and operational support.</li>
-          <li><strong>System Admin (Linux):</strong> Managed remote servers, resolved access/service issues, applied patches, and maintained platforms (e.g. WordPress) via SSH and Bash.</li>
-          <li><strong>Cloud (Azure):</strong> Configured and monitored services like compute services, Resources Group, Containers, Entra ID, Sentinel, and Purview; resolved incidents in lab-based scenarios.</li>
-          <li><strong>CI/CD & GitHub:</strong> Implemented GitHub-based pipelines with GitHub Actions, automating version control, testing, and deployment workflows.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="accordion-section">
-      <div class="accordion-header">Professional Training</div>
-      <div class="accordion-content">
-        <p><strong>Azure Cloud Developer (Training)</strong>, Generation UK & Ireland, London, 2025</p>
-        <ul>
-          <li>Built and provisioned cloud infrastructure using Terraform. Configured and managed containerized environments, to support scalable and consistent deployments.</li>
-          <li>Used Python and Bash to navigate servers. Automated deployment and maintenance tasks by performing 50+ remote operations over SSH, and deployed software including in WordPress environments.</li>
-          <li>Deployed and managed Azure resources via the Azure Portal, creating 10+ virtual machines, setting up resource groups, configuring resource locks, and managing access permissions in a lab environment.</li>
-          <li>Engineered a CI/CD pipeline project using GitHub Actions, demonstrating version control, automated testing, and deployment to ensure reliable and repeatable software delivery.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="accordion-section">
-      <div class="accordion-header">Work Experience</div>
-      <div class="accordion-content">
-        <p><strong>Customer Experience Manager</strong>, Nightlife Events Limited, London, 2022 - 2025</p>
-        <ul>
-          <li>Led logistics and guest engagement for guided group events (80+ attendees), coordinating teams and vendors via Microsoft Teams and WhatsApp Business, showcasing leadership and adaptability.</li>
-          <li>Planned and coordinated large-scale events for 300+ attendees using Trello for task tracking and Eventbrite for ticketing, coordinating across venues, staff, and vendors—executing logistical planning and cross-functional collaboration.</li>
-          <li>Utilized Google Sheets and Eventbrite to manage bookings, track attendance, and coordinate with team leads—enhancing event planning efficiency and visibility.</li>
-        </ul>
-        <p><strong>Materials Management Operative</strong>, Eleanor Hospital Logistics, London, 2022</p>
-        <ul>
-          <li>Supported the development of a new inventory app over 200+ hours by reporting bugs, delivering daily feedback, and assisting with integration—contributing to its rollout across 4 NHS trusts and building skills in troubleshooting, new system implementation, and cross-functional collaboration.</li>
-          <li>Oversaw PPE inventory and distribution across 60 hospital wards using NHS Supply Chain Portal, Microsoft Excel, and barcode scanners—ensuring timely and accurate delivery of critical supplies, with strong attention to detail and prioritization.</li>
-          <li>Collaborated with ward managers for data collection to reevaluate and update minimum stock levels, reducing PPE shortages by over 40% during the global supply chain crisis and maintaining uninterrupted support for critical care units—reflecting problem-solving and effective communication.</li>
-        </ul>
-        <p><strong>General Manager, Business Development</strong>, E Nation Asia Trading, Inc., Miami, 2015 - 2018</p>
-        <ul>
-          <li>Used digital tools including Google Analytics, Keyword Planner, and Zoho CRM platforms to generate leads—expanding the customer base by 40% in six months and contributing $500K in revenue—showcasing adaptability and analytical approach to growth.</li>
-          <li>Designed and implemented an IMEI-based tracking system leveraging Microsoft Excel and SQL queries to analyse sales patterns and return trends—reducing processing time by 50% and applying skills in data handling, automation, and process optimization.</li>
-          <li>Led the launch of a new East Coast logistics centre by building an internal communication and integration system using Google Suite—streamlining workflows, unifying remote teams, and setting up access permissions. This illustrates experience in management operations, remote team coordination, and system integration.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="accordion-section">
-      <div class="accordion-header">Education</div>
-      <div class="accordion-content">
-        <p><strong>University of Southern California</strong>, Los Angeles, Graduated 2012</p>
-        <p>B.S. - Business Administration</p>
-      </div>
-    </div>
-
-    <div class="accordion-section">
-      <div class="accordion-header">Certifications</div>
-      <div class="accordion-content">
-        <ul>
-          <li>Microsoft Certified: Azure Fundamentals AZ-900 (2025) – View Credential</li>
-          <li>Google Cybersecurity Certificate (2024) – View Credential</li>
-          <li>Microsoft Certified: Security, Compliance, and Identity Fundamentals SC-900 (2023) – View Credential</li>
-          <li>(ISC)² Certified in Cybersecurity CC (2023) – View Credential</li>
-          <li>Wireshark for Beginners (Coursera, 2024) – Certificate</li>
-          <li>TCPDump Project (Coursera, 2023) – Certificate</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="accordion-section">
-      <div class="accordion-header">Projects</div>
-      <div class="accordion-content">
-        <ul>
-          <li>CI/CD Pipeline Project (2025) – Live Demo</li>
-          <li>Python Café Ops Manager (2025) – GitHub</li>
-          <li>MySQL: Company Database Design (2025) – GitHub</li>
-          <li>WordPress Deployment (2025) – GitHub</li>
-          <li>Python: 16 Personalities Game (2025) – GitHub</li>
-          <li>Wireshark for Beginners: Packet Capture (Coursera, 2024) – Certificate</li>
-          <li>TCPDump Project (Coursera, 2023) – Certificate</li>
-        </ul>
-      </div>
-    </div>
+  <div class="section">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li><strong>Scripting (Python, PowerShell, Bash):</strong> Automated cloud tasks, wrote utility scripts, and managed file operations to reduce manual workload.</li>
+      <li><strong>Infrastructure (Terraform, Docker, Kubernetes):</strong> Built infrastructure-as-code and container setups.</li>
+      <li><strong>Database (SQL):</strong> Created and managed relational database schemas, defined tables with primary and foreign keys, and wrote complex join queries to retrieve, filter, and organize data for validation.</li>
+      <li><strong>System Admin (Linux):</strong> Managed remote servers, resolved access/service issues, applied patches, and maintained platforms (e.g. WordPress) via SSH and Bash.</li>
+      <li><strong>Cloud (Azure):</strong> Configured and monitored services like compute services, Resources Group, Containers, Entra ID (Azure AD), Sentinel, and Purview; resolved incidents in lab-based scenarios.</li>
+      <li><strong>CI/CD Pipelines & GitHub:</strong> Built pipelines with GitHub Actions to automate version control, testing, and deployment.</li>
+    </ul>
   </div>
 
-  <div class="btn-container">
-    <a href="index.html" class="btn">Back to Project Page</a>
+  <div class="section">
+    <h2>Professional Training</h2>
+    <p><strong>Azure Cloud Engineer Graduate</strong>, Generation UK & Ireland, London – 2025</p>
+    <ul>
+      <li>Intensive 12-week full-time programme (Mon–Fri, 9–5) focused on cloud, DevOps, Python scripting, and data management. Delivered by one of the UK’s top-rated tech training providers (rated ‘Outstanding’ by Ofsted).</li>
+      <li>Built and provisioned cloud infrastructure using Terraform. Configured and managed containerized environments, to support scalable and consistent deployments.</li>
+      <li>Used Bash to navigate servers. Automated deployment and maintenance tasks by performing 50+ remote operations over SSH, and deployed software including in WordPress environments.</li>
+      <li>Deployed and managed Azure resources via the Azure Portal, creating 10+ virtual machines, setting up resource groups, configuring resource locks, containers and managing access permissions.</li>
+      <li>Engineered a CI/CD pipeline project using GitHub Actions, demonstrating version control, automated testing, and deployment to ensure reliable and repeatable software delivery.</li>
+    </ul>
   </div>
+
+  <div class="section">
+    <h2>Work Experience</h2>
+    <p><strong>Customer Experience Manager</strong>, Nightlife Events Ltd, London – 2022–2025</p>
+    <ul>
+      <li>Fast-paced events company delivering guided nightlife experiences for 300+ guests per night. Front-line role requiring coordination across venues, staff, and vendors.</li>
+      <li>Led logistics and guest engagement for guided group events, coordinating teams and vendors via Microsoft Teams and WhatsApp Business, showcasing leadership and adaptability.</li>
+      <li>Planned and coordinated large-scale events for 300+ attendees using Trello for task tracking and Eventbrite for ticketing, coordinating across venues, staff, and vendors—executing logistical planning and cross-functional collaboration.</li>
+      <li>Utilized Google Sheets and Eventbrite to manage bookings, track attendance, and coordinate with team leads—enhancing event planning efficiency and visibility.</li>
+    </ul>
+    <p><strong>Materials Management Operative</strong>, Eleanor Hospital Logistics, London – 2022</p>
+    <ul>
+      <li>Leading NHS logistics provider managing 350+ hospital wards. Supported new app rollout and PPE logistics during supply chain and Monkeypox outbreak crises.</li>
+      <li>Contributed to Agile development processes by reporting 100+ bugs and usability issues, providing daily feedback across a 3-month rollout, and assisting with 20+ app patch updates—supporting successful implementation of a new inventory system across 4 NHS trusts and gaining hands-on experience in bug reporting, iterative testing, and cross-functional collaboration.</li>
+      <li>Oversaw PPE inventory and distribution across 60 hospital wards using NHS Supply Chain Portal, Microsoft Excel, and barcode scanners—ensuring timely and accurate delivery of critical supplies, with strong attention to detail and prioritization.</li>
+      <li>Collaborated with ward managers for data collection to reevaluate and update minimum stock levels, reducing PPE shortages by over 40% during the global supply chain crisis and maintaining uninterrupted support for critical care units—reflecting problem-solving and effective communication.</li>
+    </ul>
+    <p><strong>General Manager, Business Development</strong>, E Nation Asia Trading, Miami – 2015–2018</p>
+    <ul>
+      <li>Fast-growing Miami-based import firm specializing in smartphones and parts between Asia and the U.S.</li>
+      <li>Used digital tools including Google Analytics, Keyword Planner, and Zoho CRM platforms to generate leads—expanding the customer base by 40% in six months and contributing $500K in revenue—showcasing adaptability and analytical approach to growth.</li>
+      <li>Designed and implemented an IMEI-based tracking system leveraging Microsoft Excel and SQL queries to analyse sales patterns and return trends—reducing processing time by 50% and applying skills in data handling, automation, and process optimization.</li>
+      <li>Led the launch of a new East Coast logistics centre by building an internal communication and integration system using Google Suite—streamlining workflows, unifying remote teams, and setting up access permissions. This illustrates experience in management operations, remote team coordination, and system integration.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Education</h2>
+    <p><strong>University of Southern California</strong>, Los Angeles – B.S. Business Administration (2012)</p>
+  </div>
+
+  <div class="section">
+    <h2>Certifications</h2>
+    <ul>
+      <li>Microsoft Certified: Azure Fundamentals (AZ-900) (2025) – View Credential</li>
+      <li>Google Cybersecurity Certificate (2024) – View Credential</li>
+      <li>Microsoft Certified: Security, Compliance, and Identity Fundamentals (SC-900) (2023) – View Credential</li>
+      <li>(ISC)² Certified in Cybersecurity (CC) (2023) – View Credential</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Projects</h2>
+    <ul>
+      <li>CI/CD Pipeline Project (GitHub Actions, Containers, Azure Configurations) (2025) – Live Demo</li>
+      <li>Python Café Ops Manager (Python, Automation) (2025) – GitHub</li>
+      <li>MySQL: Company Database Design (MySQL, ER Diagrams, SQL Joins) (2025) – GitHub</li>
+      <li>WordPress Deployment (Linux, SSH, Web Hosting) (2025) – GitHub</li>
+      <li>Python: 16 Personalities Game (Python, Loops, Conditional Logic) (2025) – GitHub</li>
+      <li>Wireshark Packet Capture Analysis (Wireshark, Networking Basics) (2024) – Coursera Certificate</li>
+      <li>TCPDump Traffic Inspection (Linux, TCPDump, CLI Tools) (2023) – Coursera Certificate</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Interests</h2>
+    <p>Enthusiastic about bachata dancing and kung fu sparring—activities that demand quick decision-making under pressure. Both disciplines sharpen my ability to read subtle cues, stay focused, and remain calm in fast-paced, high-stakes environments—skills that carry over to both team-based and technical problem-solving scenarios.</p>
+  </div>
+
 </body>
 </html>
