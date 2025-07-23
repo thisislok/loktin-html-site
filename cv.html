@@ -1,37 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lok Tin Cheng - CV</title>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; }
-    h1, h2 { color: #2c3e50; }
-    h1 { font-size: 28px; margin-bottom: 5px; }
-    h2 { margin-top: 30px; font-size: 20px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
-    p, li { font-size: 14px; }
-    ul { list-style-type: disc; margin-left: 20px; }
-    .contact a { color: #2980b9; text-decoration: none; }
-    .section { margin-bottom: 20px; }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+    }
+    h1, h2 {
+      color: #444;
+    }
+    details {
+      margin-bottom: 1rem;
+    }
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      background: #eee;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
-
   <h1>Lok Tin Cheng</h1>
-  <p class="contact">
-    London, UK<br>
-    <a href="mailto:lokslondon@gmail.com">lokslondon@gmail.com</a> | 
-    <a href="https://linkedin.com/in/ltcheng">linkedin.com/in/ltcheng</a> | 
-    <a href="https://github.com/thisislok">github.com/thisislok</a>
+  <p>London, UK<br />
+  <a href="mailto:lokslondon@gmail.com">lokslondon@gmail.com</a> | 
+  <a href="https://linkedin.com/in/ltcheng" target="_blank">linkedin.com/in/ltcheng</a> | 
+  <a href="https://github.com/thisislok" target="_blank">github.com/thisislok</a>
   </p>
 
-  <div class="section">
-    <h2>Personal Statement</h2>
+  <details open>
+    <summary>Personal Statement</summary>
     <p>IT professional with hands-on cloud training and a background in business development. Experienced in cloud systems, automation, and cybersecurity. Trained through the Generation UK&I Cloud Engineering Bootcamp and certified in foundational Azure and cybersecurity skills. Brings a blend of practical tech abilities and cross-functional strengths in communication, collaboration, and problem-solving, developed in previous business roles. Ready to make an impact by supporting the team through practical skills and a collaborative approach.</p>
-  </div>
+  </details>
 
-  <div class="section">
-    <h2>Technical Skills</h2>
+  <details>
+    <summary>Technical Skills</summary>
     <ul>
       <li><strong>Scripting (Python, PowerShell, Bash):</strong> Automated cloud tasks, wrote utility scripts, and managed file operations to reduce manual workload.</li>
       <li><strong>Infrastructure (Terraform, Docker, Kubernetes):</strong> Built infrastructure-as-code and container setups.</li>
@@ -40,10 +60,10 @@
       <li><strong>Cloud (Azure):</strong> Configured and monitored services like compute services, Resources Group, Containers, Entra ID (Azure AD), Sentinel, and Purview; resolved incidents in lab-based scenarios.</li>
       <li><strong>CI/CD Pipelines & GitHub:</strong> Built pipelines with GitHub Actions to automate version control, testing, and deployment.</li>
     </ul>
-  </div>
+  </details>
 
-  <div class="section">
-    <h2>Professional Training</h2>
+  <details>
+    <summary>Professional Training</summary>
     <p><strong>Azure Cloud Engineer Graduate</strong>, Generation UK & Ireland, London – 2025</p>
     <ul>
       <li>Intensive 12-week full-time programme (Mon–Fri, 9–5) focused on cloud, DevOps, Python scripting, and data management. Delivered by one of the UK’s top-rated tech training providers (rated ‘Outstanding’ by Ofsted).</li>
@@ -52,10 +72,10 @@
       <li>Deployed and managed Azure resources via the Azure Portal, creating 10+ virtual machines, setting up resource groups, configuring resource locks, containers and managing access permissions.</li>
       <li>Engineered a CI/CD pipeline project using GitHub Actions, demonstrating version control, automated testing, and deployment to ensure reliable and repeatable software delivery.</li>
     </ul>
-  </div>
+  </details>
 
-  <div class="section">
-    <h2>Work Experience</h2>
+  <details>
+    <summary>Work Experience</summary>
     <p><strong>Customer Experience Manager</strong>, Nightlife Events Ltd, London – 2022–2025</p>
     <ul>
       <li>Fast-paced events company delivering guided nightlife experiences for 300+ guests per night. Front-line role requiring coordination across venues, staff, and vendors.</li>
@@ -63,6 +83,7 @@
       <li>Planned and coordinated large-scale events for 300+ attendees using Trello for task tracking and Eventbrite for ticketing, coordinating across venues, staff, and vendors—executing logistical planning and cross-functional collaboration.</li>
       <li>Utilized Google Sheets and Eventbrite to manage bookings, track attendance, and coordinate with team leads—enhancing event planning efficiency and visibility.</li>
     </ul>
+
     <p><strong>Materials Management Operative</strong>, Eleanor Hospital Logistics, London – 2022</p>
     <ul>
       <li>Leading NHS logistics provider managing 350+ hospital wards. Supported new app rollout and PPE logistics during supply chain and Monkeypox outbreak crises.</li>
@@ -70,6 +91,7 @@
       <li>Oversaw PPE inventory and distribution across 60 hospital wards using NHS Supply Chain Portal, Microsoft Excel, and barcode scanners—ensuring timely and accurate delivery of critical supplies, with strong attention to detail and prioritization.</li>
       <li>Collaborated with ward managers for data collection to reevaluate and update minimum stock levels, reducing PPE shortages by over 40% during the global supply chain crisis and maintaining uninterrupted support for critical care units—reflecting problem-solving and effective communication.</li>
     </ul>
+
     <p><strong>General Manager, Business Development</strong>, E Nation Asia Trading, Miami – 2015–2018</p>
     <ul>
       <li>Fast-growing Miami-based import firm specializing in smartphones and parts between Asia and the U.S.</li>
@@ -77,25 +99,25 @@
       <li>Designed and implemented an IMEI-based tracking system leveraging Microsoft Excel and SQL queries to analyse sales patterns and return trends—reducing processing time by 50% and applying skills in data handling, automation, and process optimization.</li>
       <li>Led the launch of a new East Coast logistics centre by building an internal communication and integration system using Google Suite—streamlining workflows, unifying remote teams, and setting up access permissions. This illustrates experience in management operations, remote team coordination, and system integration.</li>
     </ul>
-  </div>
+  </details>
 
-  <div class="section">
-    <h2>Education</h2>
+  <details>
+    <summary>Education</summary>
     <p><strong>University of Southern California</strong>, Los Angeles – B.S. Business Administration (2012)</p>
-  </div>
+  </details>
 
-  <div class="section">
-    <h2>Certifications</h2>
+  <details>
+    <summary>Certifications</summary>
     <ul>
       <li>Microsoft Certified: Azure Fundamentals (AZ-900) (2025) – View Credential</li>
       <li>Google Cybersecurity Certificate (2024) – View Credential</li>
       <li>Microsoft Certified: Security, Compliance, and Identity Fundamentals (SC-900) (2023) – View Credential</li>
       <li>(ISC)² Certified in Cybersecurity (CC) (2023) – View Credential</li>
     </ul>
-  </div>
+  </details>
 
-  <div class="section">
-    <h2>Projects</h2>
+  <details>
+    <summary>Projects</summary>
     <ul>
       <li>CI/CD Pipeline Project (GitHub Actions, Containers, Azure Configurations) (2025) – Live Demo</li>
       <li>Python Café Ops Manager (Python, Automation) (2025) – GitHub</li>
@@ -105,12 +127,11 @@
       <li>Wireshark Packet Capture Analysis (Wireshark, Networking Basics) (2024) – Coursera Certificate</li>
       <li>TCPDump Traffic Inspection (Linux, TCPDump, CLI Tools) (2023) – Coursera Certificate</li>
     </ul>
-  </div>
+  </details>
 
-  <div class="section">
-    <h2>Interests</h2>
+  <details>
+    <summary>Interests</summary>
     <p>Enthusiastic about bachata dancing and kung fu sparring—activities that demand quick decision-making under pressure. Both disciplines sharpen my ability to read subtle cues, stay focused, and remain calm in fast-paced, high-stakes environments—skills that carry over to both team-based and technical problem-solving scenarios.</p>
-  </div>
-
+  </details>
 </body>
 </html>
